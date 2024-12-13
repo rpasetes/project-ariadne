@@ -107,22 +107,20 @@ function applyHighlight(range, node) {
   //   .filter(node => node.nodeType === Node.TEXT_NODE)
   //   .filter(node => node.textContent.includes(text));
 
-  // Wrap each instance of the text in a <span> with the chosen highlight styles
   console.log(range)
   console.log(node)
-
-  const italicSpan = document.createElement('span');
-  italicSpan.style.fontStyle = 'italic';
-  range.surroundContents(italicSpan);
+  
+  // Wrap each instance of the text in a <span> with the chosen highlight styles
+  const highlightSpan = document.createElement('span');
+  highlightSpan.style.fontStyle = 'italic';
+  highlightSpan.style.backgroundColor = 'rgba(255, 255, 0, 0.5)';
+  range.surroundContents(highlightSpan);
 
   // const highlightedText = node.textContent.replace(
   //   text,
   //   `<span style="color:#ffff00;opacity:0.5;">${text}</span>`
   // );
-  // node.parentNode.innerHTML = highlightedText;
-
-
-  
+  // node.parentNode.innerHTML = highlightedText;  
 }
 
 function getHighlightStyles() {
